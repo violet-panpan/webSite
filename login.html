@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>用户登录</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="./favicon.png" type="image/png" sizes="48x48">
+<link href="./css/reset.css" rel="stylesheet">
+<link href="./css/main.css" rel="stylesheet">
+<script type="text/javascript" src="./lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/public.js"></script>
+</head>
+<body>
+<div id="header"></div>
+<div class="container login-page">
+	<div class="form-box">
+		<h2>用户登录</h2>
+		<div class="form">
+			<ul>
+				<li class="phone"><input type="text" placeholder="请输入手机号" id="phone" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11"></li>
+				<li class="password"><input type="password" placeholder="请输入登录密码" id="password"></li>
+			</ul>
+			<div class="submit" id="submit">立即登录</div>
+			<div class="link">
+				<span class="left">没有账号？<a href="./register.html">立即注册</a></span>
+				<a href="./repassword.html" class="right">忘记密码？</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer"></div>
+<script type="text/javascript">
+	$(function(){
+		var login=new objFun();
+		var phone=$("#phone");
+		var password=$("#password");
+		$("#submit").bind("click",function(){
+			if(phone.val()==""){
+				login.alert("请输入手机号");
+				return;
+			}
+			if(password.val()==""){
+				login.alert("请输入登录密码");
+				return;
+			}
+		})
+	})
+</script>
+</body>
+</html>

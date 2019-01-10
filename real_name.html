@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>实名认证</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="./favicon.png" type="image/png" sizes="48x48">
+<link href="./css/reset.css" rel="stylesheet">
+<link href="./css/main.css" rel="stylesheet">
+<script type="text/javascript" src="./lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/public.js"></script>
+<script type="text/javascript" src="./js/pagination.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".nav-list li[data-nav=account]").addClass("active");
+		$(".side li").eq(2).addClass("active");
+	})
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="container account">
+	<div class="w-1170">
+		<div class="side">
+			<div class="user-info">
+				<div class="pic">
+					<img src="./images/user_litpic.png" alt="">
+				</div>
+				<div class="phone">159****2479</div>
+				<div class="icon-g">
+					<span class="bank"></span>
+					<span class="userinfo"></span>
+					<span class="phone"></li>
+				</div>
+			</div>
+			<ul>
+				<li class="home" data-side="home"><a href="./account.html"><i></i>账户总览</a></li>
+				<li class="coupon" data-side="coupon"><a href="./coupon.html"><i></i>卡券管理</a></li>
+				<li class="info" data-side="info"><a href="./info.html"><i></i>个人资料</a></li>
+				<li class="msg" data-side="msg"><a href="./message.html"><i></i>消息中心</a></li>
+				<span></span>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="con-box real-name">
+				<div class="title"><span>实名认证</span></div>
+				<div class="notice-info">
+					<p>根据国家监管要求，丫丫理财已正式接入新网银行存管；您需要先开通银行存管的账户，才可进行投资，充值，提现、转让等操作。</p>
+				</div>
+				<div class="form">
+					<ul>
+						<li>
+							<div class="text">真实姓名：</div>
+							<div class="info">
+								<input type="text" placeholder="请输入您的真实姓名" id="name">
+							</div>
+						</li>
+						<li>
+							<div class="text">身份证：</div>
+							<div class="info">
+								<input type="text" placeholder="请输入身份证号" id="cid">
+							</div>
+						</li>
+						<li>
+							<div class="text">银行卡号：</div>
+							<div class="info">
+								<input type="text" placeholder="请输入银行卡号" id="bankcard">
+							</div>
+						</li>
+						<li>
+							<div class="text">银行：</div>
+							<div class="info dropdown">
+								<input type="text" placeholder="请选择银行" id="bank" readonly disabled data-id="" data-str="">
+								<div class="dropmenu" id="banklist">
+									<dl>
+										<dd data-id="0">建设银行</dd>
+										<dd data-id="1">农业银行</dd>
+										<dd data-id="2">北京银行</dd>
+										<dd data-id="3">杭州银行</dd>
+										<dd data-id="4">浦发银行</dd>
+									</dl>	
+								</div>
+								<div class="ico"></div>
+							</div>
+						</li>
+						<li>
+							<div class="text">手机号码：</div>
+							<div class="info">
+								<input type="text" placeholder="请输入银行预留手机号" id="phone">
+							</div>
+							<div class="get-btn" id="get-code">获取验证码</div>
+						</li>
+						<li>
+							<div class="text">支付密码：</div>
+							<div class="info">
+								<input type="text" placeholder="请输入6位数字" id="password">
+							</div>
+						</li>
+						<li>
+							<div class="text">确认密码：</div>
+							<div class="info">
+								<input type="text" placeholder="请再次输入密码" id="rptpassword">
+							</div>
+						</li>
+						<li>
+							<p class="notice">注：点击"下一步"后，您将跳转至【新网银行存管系统开通】页面</p>
+						</li>
+						<li>
+							<div class="submit" id="submit">下一步</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer"></div>
+<script type="text/javascript">
+	$(function(){
+		var side=new objFun();
+		var dropdownBtn=$(".dropdown");
+		var getBtn=$("#get-code");
+		var str="获取验证码";
+		var baseNum=60;
+		var timer=null;
+		var oTime=new Date().getTime();
+		var clickFlag=true;
+		side.slide();
+		//获取验证码按钮;
+		if(window.localStorage){
+			if(window.localStorage.getItem("timeString")){
+				var total=60-Math.ceil((oTime-localStorage.getItem("timeString"))/1000);
+				if(total>baseNum*1000){
+					window.localStorage.removeItem("timeString");
+				}else{
+					baseNum=total;
+					autoPlay();
+				}
+			}
+		}else{
+			if(getCookie("timeString")){
+				var total=60-Math.ceil((oTime-getCookie("timeString"))/1000);
+				if(total>baseNum*1000){
+					deleteCookie("timeString");
+				}else{
+					baseNum=total;
+					autoPlay();
+				}
+			}
+		}
+		function autoPlay(){
+			if(clickFlag){
+				getBtn.addClass("disabled").text(baseNum+"s后重新发送");
+				timer=setInterval(function(){
+					if(baseNum>0){
+						baseNum--;
+						getBtn.addClass("disabled").text(baseNum+"s后重新发送");
+					}else{
+						baseNum=60;
+						getBtn.removeClass("disabled").text(str);
+						if(window.localStorage){
+							window.localStorage.removeItem("timeString");
+						}else{
+							deleteCookie("timeString")
+						}
+						clearInterval(timer);
+						clickFlag=true;
+					}
+				},1000);
+				clickFlag=false;
+				return clickFlag;
+			}	
+		}
+		getBtn.bind("click",function(){
+			if($("#phone").val()==""){
+				side.alert("请填写银行预留手机号");
+				return;
+			}
+			var timeString=new Date().getTime();
+			if(window.localStorage){
+				window.localStorage.setItem("timeString",timeString);
+			}else{
+				setCookie("timeString",timeString,1)
+			}
+			autoPlay();
+		})
+		
+		dropdownBtn.bind("click",function(e){
+			$(this).addClass("up");
+			$(this).find(".dropmenu").show().stop(true,true).animate({
+				top:40,
+				opacity:1
+			},500)
+			e.stopPropagation();
+			e.preventDefault();
+		})
+		$("#banklist dl dd").bind("click",function(e){
+			var id=$(this).attr("data-id");
+			var text=$(this).text();
+			$("#bank").attr("data-id",id);
+			$("#bank").attr("data-str",text);
+			$("#bank").val(text);
+			dropdownBtn.find(".dropmenu").hide().css({
+				top:50,
+				opacity:0
+			},500)
+			dropdownBtn.removeClass("up");
+			e.stopPropagation();
+			e.preventDefault();
+		})
+		$(document).bind("click",function(){
+			dropdownBtn.removeClass("up");
+			dropdownBtn.find(".dropmenu").hide().css({
+				top:50,
+				opacity:0
+			},500)
+		})
+		$("#submit").bind("click",function(){
+			if($("#name").val()==""){
+				side.alert("请填写您的真实姓名");
+				return;
+			}
+			if($("#cid").val()==""){
+				side.alert("请填写您的身份证号");
+				return;
+			}
+			if($("#bankcard").val()==""){
+				side.alert("请填写银行卡号");
+				return;
+			}
+			if($("#bank").val()==""){
+				side.alert("请选择银行卡所属银行");
+				return;
+			}
+			if($("#phone").val()==""){
+				side.alert("请填写银行预留手机号");
+				return;
+			}
+			if($("#password").val()==""){
+				side.alert("请填写6位支付密码");
+				return;
+			}
+			if($("#rptpassword").val()==""){
+				side.alert("请确认支付密码");
+				return;
+			}
+		})
+	})	
+</script>
+</body>
+</html>

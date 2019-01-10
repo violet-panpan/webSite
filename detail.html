@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>理财详情页</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="./css/main.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		$(".nav-list li[data-nav=account]").addClass("active");
+		$(".side li").eq(0).addClass("active");
+	})
+	</script>
+</head>
+<body>
+	<div id="header"></div>
+	<div class="main detail">
+		<div class="banner">
+			<div class="banner-box">
+				<div class="crumb">
+					<a href="index.html">首页 > </a>
+					<a href="manager.html">投资列表 > </a>
+					<a class="active">项目详情 </a>
+				</div>
+				<div class="tender">
+					<div class="info">
+						<h2>新手专享X1860<i>到期还本还息</i></h2>
+						<div class="abstract">
+							<dl>
+								<dd class="rate"><label>12.88</label><span>%</span></dd>
+								<dt>预期年华收益</dt>
+							</dl>
+							<dl>
+								<dd><label>30</label><span>天</span></dd>
+								<dt>投资限期</dt>
+							</dl>
+							<dl class="amount">
+								<dd><label>200000.00</label><span>元</span></dd>
+								<dt>融资总额</dt>
+							</dl>
+						</div>
+						<div class="info-list">
+							<ul>
+								<li><label>开始时间：</label>2018-01-04 14:41</li>
+								<li><label>还款方式：</label>到期还本还息 </li>
+								<li><label>起息时间：</label>实际满标后的第二天</li>
+								<li><label>起投金额：</label><span id="minAmount">100.00</span>元</li>
+							</ul>
+						</div>
+					</div>
+					<div class="tender-box">
+						<!-- 未登录的页面 -->
+					<!-- 	<div class="centerBox login">
+							<div class="pd">
+								<p><label>66100.00</label>剩余可投（元）</p>
+								<div class="progress">
+									<div class="bar" style="width: 60%;"></div>
+								</div>
+								<div class="litpic">
+									<img src="images/demo_litpic.png">
+								</div>
+								<div class="btn"><a href="login.html">立即登录</a></div>
+								<p class="login-a">
+									<label>没有账号？</label>
+									<a href="register.html">立即注册</a>
+								</p>
+							</div>
+						</div> -->
+						<!-- 登录后的页面 -->
+						<div class="centerBox logined">
+							<h2>
+								<a href="cz.html">充值</a>
+								账户余额：
+								<label id="balance">0</label>元
+							</h2>
+							<div class="pd">
+								<p><label>66100.00</label>剩余可投（元）</p>
+								<div class="progress">
+									<div class="bar" style="width: 60%;"></div>
+								</div>
+								<div class="layui-form-item">
+								<input type="text" name="" placeholder="50元起投" class="layui-input">
+							    </div>
+							    <div class="layui-form-item">
+							    	<label class="layui-form-label">券包</label>
+							    	<div class="layui-input-block">
+							    		<div class="layui-unselect layui-form-select">
+							    			<div class="layui-select-title">
+							    				<input type="text" placeholder="请选择卡券" value="" readonly="" class="layui-input layui-unselect">
+							    				<i class="layui-edge"></i>
+							    			</div>
+							    			<dl class="layui-anim layui-anim-upbit" style="display: none;">
+							    				<dd lay-value="0" class="layui-disabled">暂无可用卡券</dd>
+							    			</dl>
+							    			<ul class="selectBox">
+							    				<li>加息券1</li>
+							    				<li>加息券2</li>
+							    			</ul>
+							    		</div>
+							    	</div>
+							    </div>
+							</div>
+							<p class="expect">
+							    	<label>预期收益<span>0.00<i> 元</i></span></label>
+							</p>
+							<div class="btn">立即投资</div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="detail-content">
+			<div class="tab-box">
+			<div class="main-box tab">
+				<ul>
+					<li class="active">项目详情</li>
+					<li>投资记录</li>
+					<li>资金保障</li>
+					<li>还款方式</li>
+				</ul>
+			</div>
+			</div>
+			<div class="content" style="display: block;">
+				<div class="main-box">
+					<h6>本项目为个人资金周转借款，借款人已名下车辆（东风日产汽车）为抵押物,还款来源有保障。 借款人户籍所在地位于山西省太原市</h6>
+					<p>本项目为个人资金周转借款，借款人已名下车辆（东风日产汽车）为抵押物,还款来源有保障。 借款人户籍所在地位于山西省太原市本项目为个人资金周转借款，借款人已名下车辆（东风日产汽车）为抵押物,还款来源有保障。 借款人户籍所在地位于山西省太原市本项目为个人资金周转借款，借款人已名下车辆（东风日产汽车）为抵押物,还款来源有保障。 借款人户籍所在地位于山西省太原市本项目为个人资金周转借款，借款人已名下车辆（东风日产汽车）为抵押物,还款来源有保障。 借款人户籍所在地位于山西省太原市</p>
+					<img src="./images/ht.png" alt="">
+				</div>
+			</div>
+			<div class="content">
+				<div class="main-box">
+				<table class="list">
+					<thead>
+						<tr>
+							<th>用户</th>
+							<th>投资金额</th>
+							<th>投资时间</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>181*****117</td>
+							<td>1100</td>
+							<td>2018-01-04 16:54:31</td>
+						</tr>
+						<tr>
+							<td>181*****117</td>
+							<td>1100</td>
+							<td>2018-01-04 16:54:31</td>
+						</tr>
+						<tr>
+							<td>181*****117</td>
+							<td>1100</td>
+							<td>2018-01-04 16:54:31</td>
+						</tr>
+						<tr>
+							<td>181*****117</td>
+							<td>1100</td>
+							<td>2018-01-04 16:54:31</td>
+						</tr>
+						<tr>
+							<td>181*****117</td>
+							<td>1100</td>
+							<td>2018-01-04 16:54:31</td>
+						</tr>
+						<tr>
+							<td>181*****117</td>
+							<td>1100</td>
+							<td>2018-01-04 16:54:31</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+			<div class="content">
+				<div class="main-box">
+					<h6>本项目为个人资金周转借款，借款人已名下车辆（东风日产汽车）为抵押物,还款来源有保障。 借款人户籍所在地位于山西省太原市</h6>
+					<img src="./images/ht.png" alt="">
+				</div>
+			</div>
+			<div class="content">
+				<div class="main-box tab4">
+					<h6><span>还款方式:</span> 投资到期，一次性还本利息。 如遇双休日以及法定假日， 还款则顺延至下一个工作日。</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+</body>
+<script type="text/javascript">
+	var detail=new objFun();
+	$(".tab ul li").bind("click",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".content").hide().eq($(".tab ul li").index(this)).show();
+	})
+	$("tbody tr:odd").css("background-color","#fff6f3");
+	$(".layui-unselect").focus(function(){
+	   $(".selectBox").toggle();
+	 // console.log(1111);
+  //   var ss=$(".layui-edge").css("background-image");
+  //   var rr=ss.substring(ss.length-8,ss.length-2);
+  //    console.log(rr);
+  //    if(rr=="up.png"){
+  //    	$(".layui-edge").css("backgroundImage","url(images/down.png)");
+  //    }if(rr=="down.png"){
+  //      console.log(222);
+  //    $(".layui-edge").css("backgroundImage","url(images/up.png)");
+  //    }
+});
+// $(".selectBox li").click(function(){
+// 	$(".layui-unselect").val($(this).text());
+// 	$(".selectBox").hide();
+// });
+// $(".layui-edge").click(function(){
+// 	   $(".selectBox").toggle();
+// });
+$(".btn").bind("click",function(){
+      detail.alert("余额不足请充值"+'<a href="cz.html" style="margin-left:30px;color:red;">立即去充值</a>',function(){
+      });
+});
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>我的账户</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="./favicon.png" type="image/png" sizes="48x48">
+<link href="./css/reset.css" rel="stylesheet">
+<link href="./css/main.css" rel="stylesheet">
+<script type="text/javascript" src="./lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/public.js"></script>
+<script type="text/javascript" src="./js/pagination.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".nav-list li[data-nav=account]").addClass("active");
+		$(".side li").eq(0).addClass("active");
+	})
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="container account">
+	<div class="w-1170">
+		<div class="side">
+			<div class="user-info">
+				<div class="pic">
+					<img src="./images/user_litpic.png" alt="">
+				</div>
+				<div class="phone">159****2479</div>
+				<div class="icon-g">
+					<a href="./info.html" class="bank"></a>
+					<a href="./info.html" class="userinfo"></a>
+					<a href="./info.html" class="phone active"></a>
+				</div>
+			</div>
+			<ul>
+				<li class="home" data-side="home"><a href="./account.html"><i></i>账户总览</a></li>
+				<li class="coupon" data-side="coupon"><a href="./coupon.html"><i></i>卡券管理</a></li>
+				<li class="info" data-side="info"><a href="./info.html"><i></i>个人资料</a></li>
+				<li class="msg" data-side="msg"><a href="./message.html"><i></i>消息中心</a></li>
+				<span></span>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="con-box tx">
+				<div class="title"><span>提现</span></div>
+				<div class="notice-info">
+					<p>1、提现t+0个工作日到账，遇节假日顺延，具体请以官方公告为主。</p>
+					<p>2、提现手续费为每笔2元，金额无上限。</p>
+					<p>3、确保您的银行账号的姓名和您的网站上的真实姓名一致。</p>
+					<p>4、每笔提现金额至少为50元。</p>
+					<p>5、重要！！如果您填写的开户行支行不正确，提现交易将无法成功。如果您不确定开户行支行名称，可以打电话到当地所在银行的营业网点询问或者上网查询。</p>
+				</div>
+				<div class="form">
+					<ul>
+						<li>
+							<div class="text">账户余额：</div>
+							<div class="info">0.00</div>
+						</li>
+						<li>
+							<div class="text">提现金额：</div>
+							<div class="info">
+								<input type="text" placeholder="请输入提现金额（元）" id="price">
+							</div>
+						</li>
+						<li>
+							<div class="submit" id="submit">确认</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer"></div>
+<script type="text/javascript">
+	$(function(){
+		var side=new objFun();
+		side.slide();
+		$("#submit").bind("click",function(){
+			if($("#price").val()==""){
+				side.alert("提现金额不能为空");
+				return;
+			}
+		})
+	})	
+</script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>我的账户</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="./favicon.png" type="image/png" sizes="48x48">
+<link href="./css/reset.css" rel="stylesheet">
+<link href="./css/main.css" rel="stylesheet">
+<script type="text/javascript" src="./lib/jquery.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/public.js"></script>
+<script type="text/javascript" src="./js/pagination.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".nav-list li[data-nav=account]").addClass("active");
+		$(".side li").eq(2).addClass("active");
+	})
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="container account">
+	<div class="w-1170">
+		<div class="side">
+			<div class="user-info">
+				<div class="pic">
+					<img src="./images/user_litpic.png" alt="">
+				</div>
+				<div class="phone">159****2479</div>
+				<div class="icon-g">
+					<a href="./info.html" class="bank"></a>
+					<a href="./info.html" class="userinfo"></a>
+					<a href="./info.html" class="phone active"></a>
+				</div>
+			</div>
+			<ul>
+				<li class="home" data-side="home"><a href="./account.html"><i></i>账户总览</a></li>
+				<li class="coupon" data-side="coupon"><a href="./coupon.html"><i></i>卡券管理</a></li>
+				<li class="info" data-side="info"><a href="./info.html"><i></i>个人资料</a></li>
+				<li class="msg" data-side="msg"><a href="./message.html"><i></i>消息中心</a></li>
+				<span></span>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="con-box msg">
+				<div class="title">
+					<span>消息中心</span>
+				</div>
+				<div class="tabs">
+					<span class="btn active">个人消息</span>
+					<span class="btn">系统消息</span>
+				</div>
+				<div class="item-list">
+					<div class="tab-item active">
+						<div class="edit-btn-g">
+							<div class="del btn" data-id="[]" id="del"><i></i>删除消息</div>
+							<div class="bj read btn" data-id="[]" id="read"><i></i>标记为已读</div>
+							<div class="total">仅显示最近三个月的消息：共<span>1</span>条消息</div>
+						</div>
+						<div class="table">
+							<table>
+								<thead>
+									<tr>
+										<th width="10%"><i class="check-all"></i>全选</th>
+										<th width="40%">标题</th>
+										<th width="35%">时间</th>
+										<th width="15%">查看</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="unread">
+										<td>
+											<i class="check-one" data-id="0"></i><img src="./images/msg_close.png">
+										</td>
+										<td>获得积分</td>
+										<td>2017-12-18 18:26:27</td>
+										<td><img src="./images/look_close.png" title="查看" class="look" data-id="0"></td>
+									</tr>
+									<tr class="unread">
+										<td><i class="check-one" data-id="1"></i><img src="./images/msg_close.png"></td>
+										<td>获得积分</td>
+										<td>2017-12-18 18:26:27</td>
+										<td><img src="./images/look_close.png" title="查看" class="look" data-id="1"></td>
+									</tr>
+									<tr>
+										<td><i class="check-one" data-id="2"></i><img src="./images/msg_open.png"></td>
+										<td>获得积分</td>
+										<td>2017-12-18 18:26:27</td>
+										<td><img src="./images/look_open.png" title="查看" class="look" data-id="2"></td>
+									</tr>
+									<tr>
+										<td><i class="check-one" data-id="3"></i><img src="./images/msg_open.png"></td>
+										<td>获得积分</td>
+										<td>2017-12-18 18:26:27</td>
+										<td><img src="./images/look_open.png" title="查看" class="look" data-id="3"></i></td>
+									</tr>
+								</tbody>
+							</table>
+							<div id="page1" class="pagination"></div>
+						</div>
+						<div class="no-data hide">
+							<img src="./images/log.png" alt="">
+							<p>暂无个人消息~</p>
+						</div>
+					</div>
+					<div class="tab-item">
+						<div class="edit-btn-g">
+							<div class="del btn" data-id="[]" id="del"><i></i>删除消息</div>
+							<div class="bj read btn" data-id="[]" id="read"><i></i>标记为已读</div>
+							<div class="total">仅显示最近三个月的消息：共<span>1</span>条消息</div>
+						</div>
+						<div class="table">
+							<table>
+								<thead>
+									<tr>
+										<th width="10%"><i class="check-all"></i>全选</th>
+										<th width="40%">标题</th>
+										<th width="35%">时间</th>
+										<th width="15%">查看</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="unread">
+										<td>
+											<i class="check-one" data-id="0"></i><img src="./images/msg_close.png">
+										</td>
+										<td>获得积分</td>
+										<td>2017-12-18 18:26:27</td>
+										<td><img src="./images/look_close.png" title="查看" class="look" data-id="0"></td>
+									</tr>
+								</tbody>
+							</table>
+							<div id="page2" class="pagination"></div>
+						</div>
+						<div class="no-data hide">
+							<img src="./images/log.png" alt="">
+							<p>暂无系统消息~</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer"></div>
+<script type="text/javascript">
+	$(function(){
+		var side=new objFun();
+		var tabBtn=$(".tabs .btn");
+		var tabItem=$(".item-list .tab-item");
+		var lookBtn=$(".table .look");//查看按钮;
+		var i=0;
+		side.slide();
+		tabItem.each(function(){
+			var arr=[];
+			var _this=$(this);
+			_this.find(".check-one").bind("click",function(){
+				var id=parseInt($(this).attr("data-id"));
+				if(!$(this).hasClass("active")){
+					arr.push(id);
+					$(this).addClass("active");
+				}else{
+					for(var i=0;i<arr.length;i++){
+						if(id==arr[i]){
+							arr.splice(i,1);
+						}
+					}
+					$(this).removeClass("active");
+				}
+				_this.find(".del").attr("data-id",JSON.stringify(arr));
+				_this.find(".read").attr("data-id",JSON.stringify(arr));
+				return arr;
+			})
+			_this.find(".check-all").bind("click",function(){
+				arr=[];
+				_this.find(".check-one").each(function(){
+					var id=parseInt($(this).attr("data-id"));
+					if($(this).hasClass("active")){
+						$(this).removeClass("active");
+					}else{
+						arr.push(id);
+						$(this).addClass("active");
+					}
+				})
+				_this.find(".del").attr("data-id",JSON.stringify(arr));
+				_this.find(".read").attr("data-id",JSON.stringify(arr));
+				$(this).toggleClass("active");
+				return arr;
+			})
+			_this.find(".del").bind("click",function(){
+				if(arr.length==0){
+					side.alert("请选择需要操作的记录");
+					return;
+				}
+			})
+			_this.find(".read").bind("click",function(){
+				if(arr.length==0){
+					side.alert("请选择需要操作的记录");
+					return;
+				}
+			})
+		})
+		tabBtn.bind("click",function(){
+			i=$(this).index();
+			$(this).addClass("active").siblings().removeClass("active");
+			tabItem.eq(i).addClass("active").siblings().removeClass("active");
+			return arr;
+		})
+		lookBtn.bind("click",function(){
+			var id=parseInt($(this).attr("data-id"));
+			side.alert("您通过签到获得1积分。");
+		})
+		$("#page1").pagination({
+			pageNo:1,
+			totalPage: 30,
+			totalSize: 300,
+			callback: function(num) {
+				//写点击分页回调执行
+			}
+		})
+		$("#page2").pagination({
+			pageNo:1,
+			totalPage: 30,
+			totalSize: 300,
+			callback: function(num) {
+				//写点击分页回调执行
+			}
+		})
+	})	
+</script>
+</body>
+</html>
