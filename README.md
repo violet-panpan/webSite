@@ -7,9 +7,11 @@
 <h2>项目目录</h2>
 <img src="https://github.com/violet-panpan/webSite/blob/master/images/mulu.png"/>
 <h2>项目功能</h2>
-<h4>登录、注册</h4>
-<h4>实名认证，绑卡，充值</h4>
-<h4>投资理财</h4>
+<p>登录、注册</p>
+<p>实名认证</p>
+<p>绑卡充值</p>
+<p>充值</p>
+<p>投资理财</p>
 <h2>项目部分截图</h2>
 <img src="https://github.com/violet-panpan/webSite/blob/master/images/webIndex1.jpg"/>
 <img src="https://github.com/violet-panpan/webSite/blob/master/images/webIndex2.png"/>
