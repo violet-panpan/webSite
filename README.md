@@ -11,7 +11,7 @@
 <h4>实名认证，绑卡，充值</h4>
 <h4>投资理财</h4>
 <h2>项目部分截图</h2>
-<img src="https://github.com/violet-panpan/webSite/blob/master/images/img/webIndex1.jpg"/>
+<img src="https://github.com/violet-panpan/webSite/blob/master/images/webIndex1.jpg"/>
 <img src="https://github.com/violet-panpan/webSite/blob/master/images/img/webIndex2.png"/>
 <img src="https://github.com/violet-panpan/webSite/blob/master/images/img/webMy.png"/>
 <img src="https://github.com/violet-panpan/webSite/blob/master/images/img/webTou.png"/>
